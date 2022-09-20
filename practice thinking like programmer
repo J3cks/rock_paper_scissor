@@ -1,0 +1,36 @@
+UNDERSTANDING PROBLEM
+
+ROCK PAPER SCISSOR!
+Game that runs in external JS
+A user vs computer game
+After a user select via prompt computer will also select
+If you win it will print out "You Win! (user selected) beats (computer selected)"
+If you lose it will print out "You Lose! (computer selected) beats (user selected)"
+The game is best of 5 and each score is tallied
+If user reached 5 first user wins vice versa
+
+
+PLAN/PSEUDOCODE
+
+Browser prompts for user selection(rock, paper, scissor) selection must be case-INSENSITIVE
+User selected will be saved in a variable
+Computer will generate random selection
+User and Computer selection will be compared
+create a function in winning (rock beats scissor, paper beats rock, scissor beats paper)
+score will be tallied for both user and computer
+game will looped until either user of computer will reached 5 points 
+if user reached 5 points game will prompt "YOU WIN!" 
+if computer reached 5 points game will prompt "YOU LOSE!"
+
+
+Breaking Problems
+
+1. create a variable from the prompt choice of player and convert it lowercase, if following string selection is not from the list (rock paper scissor) prompt it back so the user can input the right selection.
+
+2. function that randomize computer choice, we can use "Math.floor(Math.random()*array.length"
+	to get random value within [rock, paper, scissor]
+
+3. evaluate and compare playerChoice and computerChoice
+	
+	
+
