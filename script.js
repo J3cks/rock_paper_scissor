@@ -18,31 +18,40 @@ function playRound(playerSelect, computerSelect) {
     computerSelect = getComputerChoice();
     let evaluateRound = (playerSelect, computerSelect);
     console.log(playerSelect, computerSelect);
+    let evaluatRound = function(roundS) {
+      roundS = (playerSelect + computerSelect) 
+      return roundS;
+    };
 
-    const rockWins = ("rock" , "scissor");
-    const rockTies = ("rock" , "rock" );
-    const rockLose = ("rock" , "paper");
-    const paperWins = ("paper" , "rock");
-    const paperTies = ("paper" , "paper");
-    const scissorWins = ("scissor" , "paper");
-    const scissorTies = ("scissor" ,"scissor");
+    const rockWins = ("rockscissor");
+    const rockTies = ("rockrock" );
+    const rockLose = ("rockpaper");
+    const paperWins = ("paperrock");
+    const paperTies = ("paperpaper");
+    const paperLose = ("paperscissor");
+    const scissorWins = ("scissorpaper");
+    const scissorTies = ("scissorscissor");
+    const scissorLose = ("scissorrock");
 
-    if (evaluateRound === rockWins) {
+    if (evaluatRound() === rockWins) {
         console.log("You win! rock beats scissor");
-    } else if (evaluateRound === rockTies) {
+    } else if (evaluatRound() === rockTies) {
         console.log("It's a tie! rocks ties with rock!"); 
     }
-      else if (evaluateRound === rockLose) {
+      else if (evaluatRound() === rockLose) {
         console.log("You lose! paper beats rock");
     }
-
-      else if (evaluateRound === paperWins) {
+      else if (evaluatRound() === paperWins) {
         console.log("You win! paper beats rock");
-    } else if (evaluateRound === paperTies) {
+    } else if (evaluatRound() === paperTies) {
         console.log("It's a tie! paper ties with paper");
-    } else if (evaluateRound === scissorWins) {
+    } else if (evaluatRound() === paperLose) {
+        console.log("You lose! scissor beats paper");
+    } else if (evaluatRound() === scissorWins) {
         console.log("You win! scissor beats paper");
-    } else if (evaluateRound === scissorTies) {
+    } else if (evaluatRound() === scissorTies) {
         console.log("It's a tie! scissor ties with scissor");
+    } else if (evaluatRound() === scissorLose) {
+        console.log("You lose! scissor loses to rock");
     }
 }
