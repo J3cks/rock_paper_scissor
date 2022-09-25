@@ -19,18 +19,24 @@ User and Computer selection will be compared
 create a function in winning (rock beats scissor, paper beats rock, scissor beats paper)
 score will be tallied for both user and computer
 game will looped until either user of computer will reached 5 points 
-if user reached 5 points game will prompt "YOU WIN!" 
-if computer reached 5 points game will prompt "YOU LOSE!"
+if user reached 3 points game will prompt "YOU WIN!" 
+if computer reached 3 points game will prompt "YOU LOSE!"
 
 
-Breaking Problems
+Breaking Encountered Problems
 
 1. create a variable from the prompt choice of player and convert it lowercase, if following string selection is not from the list (rock paper scissor) prompt it back so the user can input the right selection.
 
 2. function that randomize computer choice, we can use "Math.floor(Math.random()*array.length"
 	to get random value within [rock, paper, scissor]
 
-3. evaluate and compare playerChoice and computerChoice
+3. evaluate and compare playerChoice and computerChoice, make the playerChoice and computerChoice in single string variable, this will be easier to compare than two strings
+
+4. for the scoring, create a variable scoreHuman and scorePc let the values to 0. upon winning or losing in the playround add +1 in the variable. this will add the score and use console.log to see the score for both the player and computer
+
+5. create a loop that will loop the playRound for 6 times (6 times rather than 5 to account for ties in the game), if player/computer score reaches 3, break loop to end the game.
+
+
 	
 	
 
