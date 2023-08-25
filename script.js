@@ -1,83 +1,59 @@
 console.log("Go J3cks!");
 console.log("I will become a developer!");
-// 
-// function playerChoice() {
-    // let userChoice = prompt("Pick one: (rock paper scissor)");
-    // userChoice = userChoice.toLowerCase();
-    // return userChoice;
-// }
-// 
-// function getComputerChoice() {
-    // let choices = ["rock", "paper", "scissor"];
-    // compChoice = choices[Math.floor(Math.random()*choices.length)];
-    // return compChoice;
-// }
-// 
-// let scoreHuman = 0;
-// let scorePc = 0;
-// 
-// function playRound(playerSelect, computerSelect) {
-    // playerSelect = playerChoice();
-    // computerSelect = getComputerChoice();
-    // let evaluateRound = (playerSelect, computerSelect);
-    // console.log(playerSelect, computerSelect);
-    // let evaluatRound = function(roundS) {
-    //   roundS = (playerSelect + computerSelect) 
-    //   return roundS;
-    // };
-// 
-    // const rockWins = ("rockscissor");
-    // const rockTies = ("rockrock" );
-    // const rockLose = ("rockpaper");
-    // const paperWins = ("paperrock");
-    // const paperTies = ("paperpaper");
-    // const paperLose = ("paperscissor");
-    // const scissorWins = ("scissorpaper");
-    // const scissorTies = ("scissorscissor");
-    // const scissorLose = ("scissorrock");
-// 
-    // if (evaluatRound() === rockWins) {
-        // console.log("You win! rock beats scissor");
-        // scoreHuman += 1;
-    // } else if (evaluatRound() === rockTies) {
-        // console.log("It's a tie! rocks ties with rock!"); 
-    // }
-    //   else if (evaluatRound() === rockLose) {
-        // console.log("You lose! paper beats rock");
-        // scorePc += 1;
-    // }
-    //   else if (evaluatRound() === paperWins) {
-        // console.log("You win! paper beats rock");
-        // scoreHuman += 1;
-    // } else if (evaluatRound() === paperTies) {
-        // console.log("It's a tie! paper ties with paper");
-    // } else if (evaluatRound() === paperLose) {
-        // console.log("You lose! scissor beats paper");
-        // scorePc += 1;
-    // } else if (evaluatRound() === scissorWins) {
-        // console.log("You win! scissor beats paper");
-        // scoreHuman += 1;
-    // } else if (evaluatRound() === scissorTies) {
-        // console.log("It's a tie! scissor ties with scissor");
-    // } else if (evaluatRound() === scissorLose) {
-        // console.log("You lose! scissor loses to rock");
-        // scorePc += 1;
-    // }
-// 
-    // console.log(scoreHuman, scorePc);
-// }
-// 
-// function game() {
-    // for (let i = 1; i < 7; i++) {
-        // console.log("Round", i)
-        // playRound();
-        // if (scoreHuman == 3) {
-            // console.log("You win!")
-            // break;
-        // } else if (scorePc == 3) {
-            // console.log("You Lose!")
-            // break;
-        // }
-    // }
-// }
-// game();
+
+//this code is barebone for the game, it uses button as simple selection just to get the logic and code right
+const container = document.querySelectorAll('button');
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissor = document.querySelector('#scissor');
+
+const emptyDiv = document.querySelector('#empty');
+const div = document.createElement('div');
+emptyDiv.append(div);
+div.innerText =  '';
+
+
+
+
+
+container.forEach(element => {
+    let choice;
+    element.addEventListener('click', function(e) {
+        div.innerText = element.innerText;  
+        choice = element.innerText;
+
+
+        let picContainer;
+        const cpuPick = () => {
+            let cpuChoices = ['rock', 'paper', 'scissor'];
+            let random = Math.floor(Math.random() * 3);
+            let pick = cpuChoices[random];
+            picContainer = pick;
+
+        }
+        cpuPick();
+
+        let eval = choice.toLowerCase() + picContainer;
+        console.log(eval);
+
+
+        let result;
+        if (eval == 'rockscissor') {
+            result = 'win';
+        } else if (eval == 'paperrock') {
+            result = 'win';
+        } else if (eval == 'scissorpaper') {
+            result = 'win';
+        } else if (eval == 'rockpaper') {
+            result = 'lose';
+        } else if (eval == 'paperscissor') {
+            result = 'lose';
+        } else if (eval == 'scissorrock') {
+            result = 'lose';
+        } else {
+            result = 'tie';
+        }
+        console.log(result);
+
+    })
+});
