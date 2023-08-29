@@ -97,8 +97,20 @@ choiceContainer.forEach(element => {
             plyBtn.innerText = 'Play Again';
             endresult.append(plyBtn);
             plyBtn.addEventListener('click', function(e){
-                location.reload();
-            }); 
+                // Reset game state
+                myScore = 0;
+                cpuScore = 0;
+                playerScore.innerText = 'Your Score: 0';
+                opponentScore.innerText = 'Computer Score: 0';
+                roundCount.innerText = 'Round 1';
+                roundResult.innerText = '';
+                showPlayer.innerText = '-';
+                showOpponent.innerText = '-';
+                count = 1;
+            
+                // Remove end result text and button
+                endresult.innerHTML = '';
+            });
             //
             return; // Exit the event listener and loop
         }
