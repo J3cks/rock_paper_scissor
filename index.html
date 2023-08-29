@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet">
 
 </head>
 <body>
@@ -18,7 +19,7 @@
             <p>Your Score: </p>
         </div>
         <div id="round-count">
-           <p>Round</p> 
+           <p>Round </p> 
         </div>
         <div class="cpu-score">
             <p>Computer Score: </p>
@@ -27,29 +28,38 @@
     
     <div id="choice-container">
         <button id="rock">
-            <img src="./images/rock.png">
+            <img src="./images/rock.jpg">
             <p>Rock</p>
         </button>
         <button id="paper">
-            <img src="./images/paper.png">
+            <img src="./images/paper.jpg">
             <p>Paper</p>
         </button>
-        <button id="scisor">
-            <img src="./images/scissor.png">
+        <button id="scissor">
+            <img src="./images/scissor.jpg">
             <p>Scissor</p>
         </button>
     </div>
 
-    <div id="play-div">
-        <button id="play-btn">PLAY!</button>
-    </div>
-
     <div id='display-pick'>
-        <p class="pick-show">player</p>
+        <p class="show-player">player</p>
         <p class="pick-show">VS</p>
-        <p class="pick-show">opponent</p>
+        <p class="show-opponent">opponent</p>
     </div>
 
-<script src="script.js"></script>
+    <div id="game-result">
+        <div>
+            <p id="round-result">GAME!</p>
+        </div>
+    </div>
+
+    <div id="endresult">
+
+    </div>
+
+<footer id="credits">
+    <p>Created by <a href="https://github.com/J3cks" target="_blank">J3cks</a></p>
+</footer>
+<script src="./script.js"></script>
 </body>
 </html>

@@ -1,9 +1,12 @@
 * {
     margin: 0;
     padding: 0;   
+    font-family: 'Public Pixel', sans-serif;
 }
 
+
 #title {
+    margin-top: 20px;
     margin: 25px;
     text-align: center;
 }
@@ -12,21 +15,32 @@
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 50px;
+    margin-top: 75px;
 }
 
 #choice-container {
    display: flex;
    justify-content: space-evenly; 
+   margin-top: 100px;
 }
 
 #choice-container button:hover {
-    border: 5px solid pink;
+    border: 5px solid black;
+    border-radius: 10px;
+    font-size: 25px;
+    transform: scale(1.2);
+}
+
+#choice-container button{
+    border: 3px solid grey;
+    border-radius: 10px;
 }
 
 
 img {
     height: 200px;
     width: 200px;
+    border-radius: 10px;;
 }
 
 #play-div {
@@ -38,4 +52,48 @@ img {
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
+}
+
+#game-result {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+#endresult {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#endresult button {
+    border-style: 1px solid grey;
+    font-weight: 600;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: -150px;
+}
+#endresult button:hover {
+    border: 2px solid black;
+    border-radius: 10px;
+    transform: scale(1.15);
+}
+
+footer a:visited {
+    color: #B4A796;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    top: 200px;
+    color: #B4A796;
+    position: relative;
 }
