@@ -1,7 +1,6 @@
 console.log("Go J3cks!");
 console.log("I will become a developer!");
 
-//this code is barebone for the game, it uses button as simple selection just to get the logic and code right
 const choiceContainer = document.querySelectorAll('#choice-container button');
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
@@ -14,7 +13,7 @@ const roundCount = document.querySelector('#round-count p');
 const playerScore = document.querySelector('.user-score p');
 const opponentScore = document.querySelector('.cpu-score p');
 const endresult = document.getElementById('endresult');
-
+const gameResult = document.querySelector("#game-result");
 
 let count = 0;
 roundCount.innerText = `Round ${count}`;
@@ -22,11 +21,6 @@ let myScore = 0;
 let cpuScore = 0;
 
 choiceContainer.forEach(element => {
-    if (myScore === 5 || cpuScore === 5) {
-        console.log(myScore === 5 ? 'YOU WIN!' : 'YOU LOSE!');
-        return; // Exit the event listener and loop
-    }
-
     let choice;
     element.addEventListener('click', function(e) {
         showPlayer.innerText = element.innerText.toUpperCase();  
@@ -86,8 +80,6 @@ choiceContainer.forEach(element => {
             console.log('keep going');
         }
         //
-        // console.log(myScore);
-        // console.log(cpuScore);
     
         // Check if the game should be stopped again after updating the scores
         if (myScore === 5 || cpuScore === 5) {
@@ -100,26 +92,15 @@ choiceContainer.forEach(element => {
                 egP.innerText = 'YOU LOSE THE GAME!';
                 endresult.appendChild(egP);
             }
+            // Reset the game state
             const plyBtn = document.createElement('button');
-            endresult.append(plyBtn);
             plyBtn.innerText = 'Play Again';
-            
+            endresult.append(plyBtn);
             plyBtn.addEventListener('click', function(e){
-                myScore = 0;
-                cpuScore = 0;
-                playerScore.innerText = 'Your Score: 0';
-                opponentScore.innerText = 'Computer Score: 0';
-                roundCount.innerText = 'Round 1';
-                roundResult.innerText = '';
-                showPlayer.innerText = '-';
-                showOpponent.innerText = '-';
-                count = 1;
-                endresult.remove();
-            }); // Reset the game state
+                location.reload();
+            }); 
+            //
             return; // Exit the event listener and loop
         }
-
     })
-    
 });
-
